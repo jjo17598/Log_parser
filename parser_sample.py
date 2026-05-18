@@ -4,7 +4,6 @@ import argparse
 from datetime import datetime
 from collections import defaultdict
 
-# --- Threat rules: keyword → (label, MITRE technique, category) ---
 THREAT_RULES = {
     "Failed login attempt":       ("Failed login attempt",        "T1110   - Brute Force",                  "Credential Access"),
     "Explicit credential use":    ("Explicit credential use",     "T1134   - Access Token Manipulation",    "Credential Access"),
@@ -22,7 +21,6 @@ def is_external(ip):
     return not any(ip.startswith(prefix) for prefix in INTERNAL_PREFIXES)
 
 def parse_line(line):
-    """Parse a single log line into structured fields."""
     pattern = r"(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2}) (\w+)\s+(.+?)(?:\s+User: (\w+))?(?:\s+IP: ([\d.]+))?$"
     match = re.match(pattern, line)
     if not match:
@@ -36,16 +34,14 @@ def parse_line(line):
     }
 
 def analyse(events):
-    """Flag threats, detect brute force, and flag external IPs."""
     flagged        = []
-    failed_logins  = defaultdict(list)  # ip → list of timestamps
+    failed_logins  = defaultdict(list)  
 
     for e in events:
         threat_label = None
         mitre        = None
         category     = None
 
-        # Match against threat rules
         for keyword, (label, mitre_code, cat) in THREAT_RULES.items():
             if keyword.lower() in e["message"].lower():
                 threat_label = label
@@ -53,11 +49,9 @@ def analyse(events):
                 category     = cat
                 break
 
-        # Track failed logins per IP for brute force detection
         if threat_label == "Failed login attempt" and e["ip_address"] != "N/A":
             failed_logins[e["ip_address"]].append(e["timestamp"])
 
-        # Flag external IPs on any WARNING or ERROR line
         external_flag = is_external(e["ip_address"]) and e["log_level"] in ("WARNING", "ERROR")
 
         if threat_label or external_flag:
@@ -146,7 +140,6 @@ def main():
 
     flagged, failed_logins = analyse(events)
 
-    # Print to terminal
     print("-" * 60)
     for e in flagged:
         ext = " [EXTERNAL IP]" if e["external"] else ""
@@ -157,7 +150,6 @@ def main():
         print(f"  MITRE  : {e['mitre']}")
         print("-" * 60)
 
-    # Brute force summary
     brute_force_ips = {ip: ts for ip, ts in failed_logins.items() if len(ts) >= 3}
     if brute_force_ips:
         print("\n  [!] BRUTE FORCE DETECTED:")
