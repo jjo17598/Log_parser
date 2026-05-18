@@ -1,0 +1,54 @@
+============================================================
+  POWERSHELL THREAT DETECTION REPORT
+  Generated : 2026-05-19 00:31:32
+============================================================
+
+--- SUMMARY ---
+  Event ID 4104 blocks analysed : 2
+  Suspicious blocks detected    : 2
+
+--- DETECTIONS BY TYPE ---
+  Remote command execution            x2
+  MITRE: T1059.001 - PowerShell      
+
+  Credential harvesting               x1
+  MITRE: T1056   - Input Capture / Credential Prompt
+
+  Fake login prompt                   x1
+  MITRE: T1056.002 - GUI Input Capture
+
+  Base64 encoded payload              x1
+  MITRE: T1027   - Obfuscated Files or Information
+
+  In-memory execution                 x1
+  MITRE: T1059.001 - PowerShell      
+
+  Obfuscated/compressed payload       x1
+  MITRE: T1027   - Obfuscated Files or Information
+
+
+--- DETAILED FINDINGS ---
+
+  [Event 1] Timestamp: 10/09/2019 01:35:09
+  Event ID : 4104 — PowerShell Script Block Logged
+  Detections:
+    - Credential harvesting
+      MITRE: T1056   - Input Capture / Credential Prompt
+    - Fake login prompt
+      MITRE: T1056.002 - GUI Input Capture
+    - Remote command execution
+      MITRE: T1059.001 - PowerShell
+  ----------------------------------------
+
+  [Event 2] Timestamp: 10/09/2019 01:35:08
+  Event ID : 4104 — PowerShell Script Block Logged
+  Detections:
+    - Base64 encoded payload
+      MITRE: T1027   - Obfuscated Files or Information
+    - In-memory execution
+      MITRE: T1059.001 - PowerShell
+    - Obfuscated/compressed payload
+      MITRE: T1027   - Obfuscated Files or Information
+    - Remote command execution
+      MITRE: T1059.001 - PowerShell
+  ----------------------------------------

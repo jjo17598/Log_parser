@@ -1,0 +1,30 @@
+2024-01-15 08:23:11 INFO  User login successful. User: jsmith IP: 192.168.1.105
+2024-01-15 08:45:02 WARNING Failed login attempt. User: jsmith IP: 192.168.1.105
+2024-01-15 08:45:09 WARNING Failed login attempt. User: jsmith IP: 192.168.1.105
+2024-01-15 08:45:17 WARNING Failed login attempt. User: jsmith IP: 192.168.1.105
+2024-01-15 08:45:25 WARNING Failed login attempt. User: jsmith IP: 192.168.1.105
+2024-01-15 08:45:33 WARNING Failed login attempt. User: jsmith IP: 192.168.1.105
+2024-01-15 09:01:44 INFO  User login successful. User: admin IP: 10.0.0.2
+2024-01-15 09:15:30 INFO  File accessed. User: admin File: C:\Users\admin\documents\passwords.txt
+2024-01-15 09:17:55 WARNING New user account created. User: backdoor_user Created by: admin
+2024-01-15 09:22:10 INFO  User login successful. User: backdoor_user IP: 185.220.101.45
+2024-01-15 09:30:05 WARNING Scheduled task created. Task: svc_update Created by: backdoor_user
+2024-01-15 09:45:18 ERROR  PowerShell script executed. User: backdoor_user Script: encoded_payload.ps1
+2024-01-15 09:47:02 WARNING New process created. User: backdoor_user Process: cmd.exe Parent: powershell.exe
+2024-01-15 10:02:33 WARNING Failed login attempt. User: administrator IP: 185.220.101.45
+2024-01-15 10:02:41 WARNING Failed login attempt. User: administrator IP: 185.220.101.45
+2024-01-15 10:02:49 WARNING Failed login attempt. User: administrator IP: 185.220.101.45
+2024-01-15 10:15:00 INFO  User login successful. User: bjones IP: 192.168.1.112
+2024-01-15 10:20:14 INFO  File accessed. User: bjones File: C:\finance\Q4_report.xlsx
+2024-01-15 10:55:37 ERROR  PowerShell script executed. User: admin Script: Invoke-Mimikatz.ps1
+2024-01-15 11:03:22 WARNING Explicit credential use detected. User: admin Target: DC01
+2024-01-15 11:30:45 INFO  User logout. User: bjones
+2024-01-15 11:45:09 WARNING New user account created. User: svc_temp Created by: admin
+2024-01-15 12:00:00 INFO  System backup started.
+2024-01-15 12:10:17 WARNING Failed login attempt. User: svc_temp IP: 185.220.101.45
+2024-01-15 12:10:25 WARNING Failed login attempt. User: svc_temp IP: 185.220.101.45
+2024-01-15 13:22:50 INFO  User login successful. User: mwilson IP: 192.168.1.98
+2024-01-15 14:05:11 ERROR  PowerShell script executed. User: backdoor_user Script: reverse_shell.ps1
+2024-01-15 14:30:00 INFO  User logout. User: mwilson
+2024-01-15 15:00:00 INFO  Scheduled backup completed.
+2024-01-15 15:45:22 WARNING Scheduled task created. Task: daily_sync Created by: backdoor_user
