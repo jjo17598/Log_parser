@@ -1,4 +1,5 @@
 import re
+import os
 from datetime import datetime
 
 THREAT_RULES = {
@@ -124,8 +125,9 @@ def write_report(red_flags, failed_login_attempts, total_events, output_file):
 
 
 def main():
-    log_file = "sample2.log"
-    report_file = "report2.txt"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    log_file = os.path.join(script_dir, "sample2.log")
+    report_file = os.path.join(script_dir, "report2.txt")
 
     print("=" * 55)
     print("  LOG PARSER")
