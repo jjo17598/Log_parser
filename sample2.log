@@ -1,0 +1,58 @@
+2024-03-10 07:05:13 INFO  User login successful. User: tharris IP: 192.168.2.44
+2024-03-10 07:12:40 INFO  File accessed. User: tharris File: C:\HR\employees_2024.xlsx
+2024-03-10 07:30:00 INFO  System health check completed.
+2024-03-10 08:01:55 INFO  User login successful. User: jcarter IP: 192.168.2.71
+2024-03-10 08:15:22 WARNING Failed login attempt. User: jcarter IP: 203.0.113.88
+2024-03-10 08:15:30 WARNING Failed login attempt. User: jcarter IP: 203.0.113.88
+2024-03-10 08:15:38 WARNING Failed login attempt. User: jcarter IP: 203.0.113.88
+2024-03-10 08:15:46 WARNING Failed login attempt. User: jcarter IP: 203.0.113.88
+2024-03-10 08:16:02 INFO  User login successful. User: jcarter IP: 203.0.113.88
+2024-03-10 08:22:10 INFO  File accessed. User: jcarter File: C:\Finance\payroll_march.xlsx
+2024-03-10 08:25:44 INFO  File accessed. User: jcarter File: C:\Finance\bank_accounts.docx
+2024-03-10 08:30:01 WARNING New user account created. User: svc_monitor Created by: jcarter
+2024-03-10 08:45:19 INFO  User login successful. User: svc_monitor IP: 203.0.113.88
+2024-03-10 08:47:33 ERROR  PowerShell script executed. User: svc_monitor Script: sys_inventory.ps1
+2024-03-10 08:50:05 WARNING New process created. User: svc_monitor Process: net.exe Parent: powershell.exe
+2024-03-10 09:00:00 INFO  Scheduled backup started.
+2024-03-10 09:03:17 WARNING Scheduled task created. Task: net_scan Created by: svc_monitor
+2024-03-10 09:10:44 INFO  User login successful. User: lpatel IP: 192.168.2.55
+2024-03-10 09:20:30 INFO  File accessed. User: lpatel File: C:\Projects\roadmap_2024.pptx
+2024-03-10 09:35:58 WARNING Explicit credential use detected. User: svc_monitor Target: FILESERVER02
+2024-03-10 09:41:12 ERROR  PowerShell script executed. User: svc_monitor Script: lateral_move.ps1
+2024-03-10 09:55:00 WARNING Failed login attempt. User: lpatel IP: 203.0.113.88
+2024-03-10 09:55:08 WARNING Failed login attempt. User: lpatel IP: 203.0.113.88
+2024-03-10 10:00:00 INFO  Scheduled backup completed.
+2024-03-10 10:05:33 INFO  User login successful. User: admin IP: 10.0.0.1
+2024-03-10 10:18:47 WARNING New user account created. User: temp_audit Created by: svc_monitor
+2024-03-10 10:22:05 INFO  User login successful. User: temp_audit IP: 203.0.113.88
+2024-03-10 10:30:21 WARNING Scheduled task created. Task: cleanup_logs Created by: temp_audit
+2024-03-10 10:45:09 ERROR  PowerShell script executed. User: temp_audit Script: exfil_data.ps1
+2024-03-10 10:47:55 WARNING New process created. User: temp_audit Process: cmd.exe Parent: powershell.exe
+2024-03-10 11:00:00 INFO  User logout. User: lpatel
+2024-03-10 11:05:44 WARNING Failed login attempt. User: admin IP: 45.33.32.156
+2024-03-10 11:05:52 WARNING Failed login attempt. User: admin IP: 45.33.32.156
+2024-03-10 11:06:00 WARNING Failed login attempt. User: admin IP: 45.33.32.156
+2024-03-10 11:06:08 WARNING Failed login attempt. User: admin IP: 45.33.32.156
+2024-03-10 11:06:16 WARNING Failed login attempt. User: admin IP: 45.33.32.156
+2024-03-10 11:20:39 INFO  User login successful. User: mford IP: 192.168.2.101
+2024-03-10 11:35:00 INFO  File accessed. User: mford File: C:\Legal\contracts_2024.pdf
+2024-03-10 12:00:00 INFO  System health check completed.
+2024-03-10 12:10:17 WARNING Explicit credential use detected. User: temp_audit Target: DC02
+2024-03-10 12:22:50 ERROR  PowerShell script executed. User: admin Script: Invoke-Mimikatz.ps1
+2024-03-10 12:45:00 INFO  User logout. User: mford
+2024-03-10 13:01:14 INFO  User login successful. User: tharris IP: 192.168.2.44
+2024-03-10 13:15:30 INFO  File accessed. User: tharris File: C:\HR\performance_reviews.xlsx
+2024-03-10 13:30:00 INFO  User logout. User: tharris
+2024-03-10 14:00:00 INFO  Scheduled task ran. Task: cleanup_logs
+2024-03-10 14:05:22 WARNING New process created. User: svc_monitor Process: wscript.exe Parent: cmd.exe
+2024-03-10 14:20:11 WARNING Failed login attempt. User: tharris IP: 45.33.32.156
+2024-03-10 14:20:19 WARNING Failed login attempt. User: tharris IP: 45.33.32.156
+2024-03-10 15:00:00 INFO  Scheduled backup started.
+2024-03-10 15:10:44 INFO  User login successful. User: jcarter IP: 192.168.2.71
+2024-03-10 15:25:30 INFO  File accessed. User: jcarter File: C:\Finance\Q1_forecast.xlsx
+2024-03-10 15:45:00 INFO  User logout. User: jcarter
+2024-03-10 16:00:00 INFO  Scheduled backup completed.
+2024-03-10 16:30:55 WARNING Scheduled task created. Task: persist_beacon Created by: temp_audit
+2024-03-10 16:45:02 ERROR  PowerShell script executed. User: temp_audit Script: beacon_install.ps1
+2024-03-10 17:00:00 INFO  System health check completed.
+2024-03-10 17:10:00 INFO  User logout. User: admin

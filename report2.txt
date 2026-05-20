@@ -1,0 +1,314 @@
+=======================================================
+  LOG THREAT REPORT
+  Generated: 2026-05-20 21:36:20
+=======================================================
+
+--- SUMMARY ---
+  Total events scanned : 58
+  Red flags found      : 28
+  Brute force IPs      : 2
+
+--- FLAGS BY CATEGORY ---
+  Credential Access              15 event(s)
+  Persistence                    5 event(s)
+  Execution                      5 event(s)
+  Discovery                      3 event(s)
+
+--- BRUTE FORCE DETECTED ---
+  IP: 203.0.113.88  (6 failed attempts)
+    2024-03-10 08:15:22
+    2024-03-10 08:15:30
+    2024-03-10 08:15:38
+    2024-03-10 08:15:46
+    2024-03-10 09:55:00
+    2024-03-10 09:55:08
+  IP: 45.33.32.156  (7 failed attempts)
+    2024-03-10 11:05:44
+    2024-03-10 11:05:52
+    2024-03-10 11:06:00
+    2024-03-10 11:06:08
+    2024-03-10 11:06:16
+    2024-03-10 14:20:11
+    2024-03-10 14:20:19
+
+--- ALL RED FLAGS ---
+
+  Date/Time : 2024-03-10 08:15:22
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : jcarter
+  IP        : 203.0.113.88
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 08:15:30
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : jcarter
+  IP        : 203.0.113.88
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 08:15:38
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : jcarter
+  IP        : 203.0.113.88
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 08:15:46
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : jcarter
+  IP        : 203.0.113.88
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 08:30:01
+  Level     : WARNING
+  Event     : New user account created. User: svc_monitor Created by: jcarter
+  User      : N/A
+  IP        : N/A
+  Threat    : Create Account
+  MITRE ID  : T1136
+  Category  : Persistence
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 08:47:33
+  Level     : ERROR
+  Event     : PowerShell script executed. User: svc_monitor Script: sys_inventory.ps1
+  User      : N/A
+  IP        : N/A
+  Threat    : Command and Scripting Interpreter
+  MITRE ID  : T1059
+  Category  : Execution
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 08:50:05
+  Level     : WARNING
+  Event     : New process created. User: svc_monitor Process: net.exe Parent: powershell.exe
+  User      : N/A
+  IP        : N/A
+  Threat    : Process Discovery
+  MITRE ID  : T1057
+  Category  : Discovery
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 09:03:17
+  Level     : WARNING
+  Event     : Scheduled task created. Task: net_scan Created by: svc_monitor
+  User      : N/A
+  IP        : N/A
+  Threat    : Scheduled Task/Job
+  MITRE ID  : T1053
+  Category  : Persistence
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 09:35:58
+  Level     : WARNING
+  Event     : Explicit credential use detected. User: svc_monitor Target: FILESERVER02
+  User      : N/A
+  IP        : N/A
+  Threat    : Valid Accounts
+  MITRE ID  : T1078
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 09:41:12
+  Level     : ERROR
+  Event     : PowerShell script executed. User: svc_monitor Script: lateral_move.ps1
+  User      : N/A
+  IP        : N/A
+  Threat    : Command and Scripting Interpreter
+  MITRE ID  : T1059
+  Category  : Execution
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 09:55:00
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : lpatel
+  IP        : 203.0.113.88
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 09:55:08
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : lpatel
+  IP        : 203.0.113.88
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 10:18:47
+  Level     : WARNING
+  Event     : New user account created. User: temp_audit Created by: svc_monitor
+  User      : N/A
+  IP        : N/A
+  Threat    : Create Account
+  MITRE ID  : T1136
+  Category  : Persistence
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 10:30:21
+  Level     : WARNING
+  Event     : Scheduled task created. Task: cleanup_logs Created by: temp_audit
+  User      : N/A
+  IP        : N/A
+  Threat    : Scheduled Task/Job
+  MITRE ID  : T1053
+  Category  : Persistence
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 10:45:09
+  Level     : ERROR
+  Event     : PowerShell script executed. User: temp_audit Script: exfil_data.ps1
+  User      : N/A
+  IP        : N/A
+  Threat    : Command and Scripting Interpreter
+  MITRE ID  : T1059
+  Category  : Execution
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 10:47:55
+  Level     : WARNING
+  Event     : New process created. User: temp_audit Process: cmd.exe Parent: powershell.exe
+  User      : N/A
+  IP        : N/A
+  Threat    : Process Discovery
+  MITRE ID  : T1057
+  Category  : Discovery
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 11:05:44
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : admin
+  IP        : 45.33.32.156
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 11:05:52
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : admin
+  IP        : 45.33.32.156
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 11:06:00
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : admin
+  IP        : 45.33.32.156
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 11:06:08
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : admin
+  IP        : 45.33.32.156
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 11:06:16
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : admin
+  IP        : 45.33.32.156
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 12:10:17
+  Level     : WARNING
+  Event     : Explicit credential use detected. User: temp_audit Target: DC02
+  User      : N/A
+  IP        : N/A
+  Threat    : Valid Accounts
+  MITRE ID  : T1078
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 12:22:50
+  Level     : ERROR
+  Event     : PowerShell script executed. User: admin Script: Invoke-Mimikatz.ps1
+  User      : N/A
+  IP        : N/A
+  Threat    : Command and Scripting Interpreter
+  MITRE ID  : T1059
+  Category  : Execution
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 14:05:22
+  Level     : WARNING
+  Event     : New process created. User: svc_monitor Process: wscript.exe Parent: cmd.exe
+  User      : N/A
+  IP        : N/A
+  Threat    : Process Discovery
+  MITRE ID  : T1057
+  Category  : Discovery
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 14:20:11
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : tharris
+  IP        : 45.33.32.156
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 14:20:19
+  Level     : WARNING
+  Event     : Failed login attempt.
+  User      : tharris
+  IP        : 45.33.32.156
+  Threat    : Brute Force Attack
+  MITRE ID  : T1110
+  Category  : Credential Access
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 16:30:55
+  Level     : WARNING
+  Event     : Scheduled task created. Task: persist_beacon Created by: temp_audit
+  User      : N/A
+  IP        : N/A
+  Threat    : Scheduled Task/Job
+  MITRE ID  : T1053
+  Category  : Persistence
+  ----------------------------------------
+
+  Date/Time : 2024-03-10 16:45:02
+  Level     : ERROR
+  Event     : PowerShell script executed. User: temp_audit Script: beacon_install.ps1
+  User      : N/A
+  IP        : N/A
+  Threat    : Command and Scripting Interpreter
+  MITRE ID  : T1059
+  Category  : Execution
+  ----------------------------------------
