@@ -2,12 +2,12 @@ import re
 from datetime import datetime
 
 THREAT_RULES = {
-    "Failed login attempt."              : ("T1110", "Brute Force Attack",                  "Credential Access"),
-    "New user account created."          : ("T1136", "Create Account",                      "Persistence"),
-    "Scheduled task created."            : ("T1053", "Scheduled Task/Job",                  "Persistence"),
-    "Explicit credential use detected."  : ("T1078", "Valid Accounts",                      "Credential Access"),
-    "New process created."               : ("T1057", "Process Discovery",                   "Discovery"),
-    "PowerShell script executed."        : ("T1059", "Command and Scripting Interpreter",   "Execution"),
+    "Failed login attempt." : ("T1110", "Brute Force Attack", "Credential Access"),
+    "New user account created." : ("T1136", "Create Account", "Persistence"),
+    "Scheduled task created." : ("T1053", "Scheduled Task/Job", "Persistence"),
+    "Explicit credential use detected." : ("T1078", "Valid Accounts", "Credential Access"),
+    "New process created." : ("T1057", "Process Discovery", "Discovery"),
+    "PowerShell script executed." : ("T1059", "Command and Scripting Interpreter", "Execution"),
 }
 
 INTERNAL_IPS = ("192.168.", "10.", "172.")
@@ -26,12 +26,12 @@ def parse_log_line(line):
     if not match:
         return None
     return {
-        "date":        match.group(1),
-        "time":        match.group(2),
-        "type":        match.group(3),
+        "date": match.group(1),
+        "time": match.group(2),
+        "type": match.group(3),
         "description": match.group(4).strip(),
-        "user":        match.group(5) if match.group(5) else "N/A",
-        "ip":          match.group(6) if match.group(6) else "N/A"
+        "user": match.group(5) if match.group(5) else "N/A",
+        "ip": match.group(6) if match.group(6) else "N/A"
     }
 
 
@@ -41,14 +41,14 @@ def analyze_log_line(events):
 
     for e in events:
         threat_label = None
-        mitre_id     = None
-        category     = None
+        mitre_id = None
+        category = None
 
         for keyword, (id, label, cat) in THREAT_RULES.items():
             if keyword.lower() in e["description"].lower():
                 threat_label = label
-                mitre_id     = id
-                category     = cat
+                mitre_id = id
+                category = cat
                 break
 
         if "Failed login attempt" in e["description"] and e["ip"] != "N/A":
@@ -62,8 +62,8 @@ def analyze_log_line(events):
             red_flags.append({
                 **e,
                 "threat_label": threat_label or "Suspicious External IP",
-                "mitre_id":     mitre_id,
-                "category":     category
+                "mitre_id": mitre_id,
+                "category": category
             })
 
     return red_flags, failed_login_attempts
@@ -124,7 +124,7 @@ def write_report(red_flags, failed_login_attempts, total_events, output_file):
 
 
 def main():
-    log_file    = "sample2.log"
+    log_file = "sample2.log"
     report_file = "report2.txt"
 
     print("=" * 55)
